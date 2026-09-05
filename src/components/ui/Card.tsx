@@ -18,11 +18,11 @@ export function Card({
 }: CardProps) {
   const variantStyles = {
     default:
-      "bg-slate-900/60 border border-slate-800/80 text-slate-100 shadow-subtle",
+      "bg-white dark:bg-[#111723] border border-slate-200 dark:border-slate-800/80 text-slate-900 dark:text-slate-100 shadow-subtle",
     glass:
-      "bg-slate-900/40 backdrop-blur-md border border-slate-800/60 text-slate-100 shadow-card",
+      "bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/90 dark:border-slate-800/60 text-slate-900 dark:text-slate-100 shadow-card",
     light:
-      "bg-white border border-slate-200 text-slate-900 shadow-sm",
+      "bg-slate-50 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 shadow-sm",
   };
 
   const paddingStyles = {
@@ -33,7 +33,7 @@ export function Card({
   };
 
   const hoverStyles = hover
-    ? "transition-all duration-300 hover:-translate-y-1 hover:border-slate-700 hover:shadow-lg hover:shadow-emerald-500/5"
+    ? "transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/40 dark:hover:border-slate-700 hover:shadow-lg hover:shadow-emerald-500/5"
     : "";
 
   return (
@@ -45,3 +45,4 @@ export function Card({
     </div>
   );
 }
+

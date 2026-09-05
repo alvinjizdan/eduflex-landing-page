@@ -1,25 +1,75 @@
 @import "tailwindcss";
 
+@variant dark (.dark &, &.dark);
+
 @layer base {
-  :root {
-    /* Color Palette Tokens - Dark Context (Default) */
-    --background: #0b0f17;
+  /* Default Theme Tokens - Light Mode */
+  :root,
+  [data-theme="light"],
+  .light {
+    --background: #f8fafc;
+    --background-subtle: #f1f5f9;
+    --foreground: #0f172a;
+    --foreground-muted: #475569;
+
+    --surface-canvas: #f8fafc;
+    --surface-card: #ffffff;
+    --surface-elevated: #f1f5f9;
+    --surface-highest: #e2e8f0;
+    --surface-dark: #0f172a;
+
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+
+    --border: rgba(15, 23, 42, 0.08);
+    --border-hover: rgba(15, 23, 42, 0.16);
+
+    /* Primary Accent - Emerald */
+    --accent: #059669;
+    --accent-hover: #047857;
+    --accent-muted: rgba(5, 150, 105, 0.08);
+    --accent-glow: rgba(5, 150, 105, 0.15);
+    --accent-foreground: #ffffff;
+
+    --success: #059669;
+    --destructive: #dc2626;
+
+    /* Glassmorphism Tokens */
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(15, 23, 42, 0.08);
+
+    /* Shadow Scale */
+    --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+    --shadow-glow: 0 0 40px -5px var(--accent-glow);
+
+    /* Color Scheme Browser Native Chrome */
+    color-scheme: light;
+  }
+
+  /* Dark Mode Tokens */
+  [data-theme="dark"],
+  .dark {
+    --background: #090d14;
+    --background-subtle: #0d131d;
     --foreground: #f8fafc;
+    --foreground-muted: #94a3b8;
 
-    --surface: #111827;
-    --surface-muted: #1e293b;
+    --surface-canvas: #090d14;
+    --surface-card: #111723;
+    --surface-elevated: #182030;
+    --surface-highest: #212b3e;
     --surface-dark: #070a0f;
-    --foreground-dark: #0f172a;
 
-    --muted: #1e293b;
+    --muted: #182030;
     --muted-foreground: #94a3b8;
 
     --border: rgba(255, 255, 255, 0.08);
     --border-hover: rgba(255, 255, 255, 0.16);
 
-    /* Primary Accent - Emerald Family */
+    /* Primary Accent - Emerald (Tuned for Dark Surfaces) */
     --accent: #10b981;
-    --accent-hover: #059669;
+    --accent-hover: #34d399;
     --accent-muted: rgba(16, 185, 129, 0.12);
     --accent-glow: rgba(16, 185, 129, 0.2);
     --accent-foreground: #022c22;
@@ -27,34 +77,23 @@
     --success: #10b981;
     --destructive: #ef4444;
 
-    /* Radius Scale */
-    --radius-sm: 0.375rem; /* 6px */
-    --radius-md: 0.75rem;  /* 12px */
-    --radius-lg: 1.25rem;  /* 20px */
-    --radius-pill: 9999px;
-  }
+    /* Glassmorphism Tokens */
+    --glass-bg: rgba(17, 23, 35, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.1);
 
-  /* Light Section Context Tokens */
-  .section-light {
-    --background: #ffffff;
-    --foreground: #0f172a;
-    --surface: #f8fafc;
-    --surface-muted: #f1f5f9;
-    --surface-dark: #e2e8f0;
-    --muted: #f1f5f9;
-    --muted-foreground: #64748b;
-    --border: #e2e8f0;
-    --border-hover: #cbd5e1;
-    --accent-muted: rgba(16, 185, 129, 0.08);
-    --accent-foreground: #ffffff;
-    color: var(--foreground);
-    background-color: var(--background);
+    /* Shadow Scale */
+    --shadow-subtle: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    --shadow-card: 0 12px 36px -8px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 50px -10px var(--accent-glow);
+
+    /* Color Scheme Browser Native Chrome */
+    color-scheme: dark;
   }
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
 body {
@@ -64,9 +103,10 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Typography Utility Classes (Editorial & B2B SaaS Hierarchy) */
+/* Typography Utility Classes (Apple Optical Sizing & Editorial Hierarchy) */
 .text-display {
   font-size: clamp(2.5rem, 4vw + 1rem, 4.5rem);
   font-weight: 700;
@@ -121,17 +161,17 @@ body {
   color: var(--accent);
 }
 
-/* Elevation / Shadows */
+/* Glassmorphism & Elevation */
 .shadow-subtle {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-subtle);
 }
 
 .shadow-card {
-  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-card);
 }
 
 .shadow-glow {
-  box-shadow: 0 0 50px -10px var(--accent-glow);
+  box-shadow: var(--shadow-glow);
 }
 
 /* Focus Visible State (Accessibility Baseline) */
@@ -145,14 +185,15 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b0f17;
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: var(--muted-foreground);
+  opacity: 0.3;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: var(--accent);
 }
 
 /* Reduced Motion Compatibility */
@@ -167,3 +208,4 @@ body {
     scroll-behavior: auto !important;
   }
 }
+

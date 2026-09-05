@@ -7,20 +7,20 @@ const expectations = [
   {
     step: "1",
     title: "Understand your training requirements",
-    description: "Analisa mendalam struktur pelatihan, target peserta, dan sasaran kompetensi instansi.",
-    icon: <Search className="w-4 h-4 text-emerald-400" />,
+    description: "In-depth analysis of your institution's training structure, target learners, and competency goals.",
+    icon: <Search className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />,
   },
   {
     step: "2",
     title: "Explore the right platform structure",
-    description: "Perancangan alur materi modular, hirarki wewenang role, dan simulasi interaktif.",
-    icon: <Compass className="w-4 h-4 text-emerald-400" />,
+    description: "Designing modular learning content flows, role authority hierarchies, and interactive simulations.",
+    icon: <Compass className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />,
   },
   {
     step: "3",
     title: "Discuss customization and deployment needs",
-    description: "Konsolidasi model implementasi yang sesuai dengan lingkungan operasional organisasi.",
-    icon: <Rocket className="w-4 h-4 text-emerald-400" />,
+    description: "Consolidating an implementation model aligned with your organization's operational environment.",
+    icon: <Rocket className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />,
   },
 ];
 
@@ -28,7 +28,7 @@ export function RequestDemo() {
   return (
     <section
       id="request-demo"
-      className="py-12 sm:py-16 bg-[#0B0F17] relative border-t border-slate-800/80"
+      className="py-12 sm:py-16 bg-slate-50 dark:bg-[#0B0F17] relative border-t border-slate-200 dark:border-slate-800/80 transition-colors"
       aria-label="Request a Demo"
     >
       {/* Background Subtle Gradient Glow Accent */}
@@ -47,7 +47,7 @@ export function RequestDemo() {
 
             {/* WHAT TO EXPECT Block */}
             <div className="space-y-4 pt-2">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
                 WHAT TO EXPECT
               </h3>
 
@@ -55,16 +55,16 @@ export function RequestDemo() {
                 {expectations.map((item) => (
                   <div
                     key={item.step}
-                    className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 flex items-start gap-3.5"
+                    className="p-4 rounded-xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 flex items-start gap-3.5 shadow-subtle"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-emerald-400 flex-shrink-0 mt-0.5">
+                    <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 flex items-center justify-center text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5">
                       {item.icon}
                     </div>
                     <div className="space-y-0.5">
-                      <h4 className="text-xs font-semibold text-slate-200">
+                      <h4 className="text-xs font-semibold text-slate-900 dark:text-slate-200">
                         {item.title}
                       </h4>
-                      <p className="text-[11px] text-slate-400 leading-relaxed">
+                      <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -78,7 +78,7 @@ export function RequestDemo() {
           <div className="lg:col-span-7 w-full">
             <Card
               variant="glass"
-              className="p-6 sm:p-8 border border-emerald-500/40 bg-slate-900/90 shadow-xl shadow-emerald-500/5 backdrop-blur-xl"
+              className="p-6 sm:p-8 border border-emerald-500/40 dark:border-emerald-500/40 bg-white/90 dark:bg-slate-900/90 shadow-xl shadow-emerald-500/5 backdrop-blur-xl"
             >
               <DemoForm />
             </Card>
@@ -88,3 +88,4 @@ export function RequestDemo() {
     </section>
   );
 }
+

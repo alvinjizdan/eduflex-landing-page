@@ -32,8 +32,8 @@ export function FeatureBlock({
       hover
       className={`relative overflow-hidden flex flex-col justify-between space-y-6 ${
         isHighlight
-          ? "border-emerald-500/30 bg-gradient-to-b from-slate-900/90 to-slate-900/60 shadow-glow"
-          : "border-slate-800/80 bg-slate-900/50"
+          ? "border-emerald-500/40 dark:border-emerald-500/30 bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-slate-900/95 dark:via-slate-900/80 dark:to-slate-900/60 shadow-glow"
+          : "border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/50"
       } p-6 sm:p-8 ${className}`}
     >
       {/* Accent Line for Highlight Variant */}
@@ -45,7 +45,7 @@ export function FeatureBlock({
         {/* Number & Icon Header */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="font-mono text-xs font-semibold tracking-wider text-emerald-400 px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20">
+            <span className="font-mono text-xs font-semibold tracking-wider text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20">
               {number}
             </span>
             {isHighlight && (
@@ -54,15 +54,15 @@ export function FeatureBlock({
               </Badge>
             )}
           </div>
-          <div className="w-10 h-10 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-emerald-400 shadow-subtle">
+          <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shadow-subtle">
             {icon}
           </div>
         </div>
 
         {/* Title & Description */}
         <div className="space-y-2 text-left">
-          <h3 className="text-h3 text-slate-100 font-semibold">{groupTitle}</h3>
-          <p className="text-body-small text-slate-300 leading-relaxed font-normal">
+          <h3 className="text-h3 text-slate-900 dark:text-slate-100 font-semibold">{groupTitle}</h3>
+          <p className="text-body-small text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
             {description}
           </p>
         </div>
@@ -70,8 +70,8 @@ export function FeatureBlock({
         {/* Capabilities Checklist */}
         <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left">
           {capabilities.map((cap) => (
-            <div key={cap} className="flex items-center gap-2 text-xs text-slate-300">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+            <div key={cap} className="flex items-center gap-2 text-xs text-slate-700 dark:text-slate-300">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
               <span className="font-medium">{cap}</span>
             </div>
           ))}
@@ -83,3 +83,4 @@ export function FeatureBlock({
     </Card>
   );
 }
+

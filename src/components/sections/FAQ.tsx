@@ -8,7 +8,7 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="py-12 sm:py-16 bg-[#0B0F17] relative border-t border-slate-800/80"
+      className="py-12 sm:py-16 bg-slate-50 dark:bg-[#0B0F17] relative border-t border-slate-200 dark:border-slate-800/80 transition-colors"
       aria-label="Frequently Asked Questions"
     >
       {/* Background Subtle Gradient Glow Accent */}
@@ -26,12 +26,12 @@ export function FAQ() {
               align="left"
             />
 
-            <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
-              <h4 className="text-xs font-semibold text-slate-200">
+            <div className="p-5 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3 shadow-subtle">
+              <h4 className="text-xs font-semibold text-slate-900 dark:text-slate-200">
                 Need more information?
               </h4>
-              <p className="text-body-small text-slate-400">
-                Tim EduFlex siap mendiskusikan kebutuhan arsitektur LMS instansi Anda secara mendalam.
+              <p className="text-body-small text-slate-600 dark:text-slate-400">
+                The EduFlex team is ready to discuss your organization&apos;s LMS architecture requirements in detail.
               </p>
             </div>
           </div>
@@ -49,16 +49,16 @@ export function FAQ() {
         <div className="pt-6">
           <Card
             variant="glass"
-            className="p-8 sm:p-10 border border-emerald-500/30 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900 text-left flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+            className="p-8 sm:p-10 border border-emerald-500/40 dark:border-emerald-500/30 bg-gradient-to-r from-white via-slate-50 to-white dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-900 text-left flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
           >
             <div className="space-y-2 max-w-2xl">
-              <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400">
+              <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
                 STILL HAVE QUESTIONS?
               </span>
-              <h3 className="text-h3 text-slate-100 font-bold">
+              <h3 className="text-h3 text-slate-900 dark:text-slate-100 font-bold">
                 Let&apos;s talk about your learning environment.
               </h3>
-              <p className="text-body-small text-slate-300">
+              <p className="text-body-small text-slate-600 dark:text-slate-300">
                 Tell us how your organization structures learning, access, and practical training, and we can discuss how EduFlex could be configured around it.
               </p>
             </div>
@@ -75,3 +75,4 @@ export function FAQ() {
     </section>
   );
 }
+

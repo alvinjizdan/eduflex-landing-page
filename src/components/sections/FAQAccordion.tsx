@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface FAQItem {
   question: string;
@@ -68,10 +69,10 @@ export function FAQAccordion() {
         return (
           <div
             key={item.question}
-            className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+            className={`rounded-2xl border transition-colors duration-200 overflow-hidden ${
               isOpen
-                ? "bg-slate-900/80 border-emerald-500/30 shadow-md shadow-emerald-500/5"
-                : "bg-slate-900/40 border-slate-800/80 hover:border-slate-700/80"
+                ? "bg-white dark:bg-slate-900/80 border-emerald-500/40 dark:border-emerald-500/30 shadow-md shadow-emerald-500/5"
+                : "bg-slate-50 dark:bg-slate-900/40 border-slate-200 dark:border-slate-800/80 hover:border-slate-300 dark:hover:border-slate-700/80"
             }`}
           >
             <h3>
@@ -81,33 +82,41 @@ export function FAQAccordion() {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => toggleItem(idx)}
-                className="w-full flex items-center justify-between gap-4 p-5 text-left font-semibold text-sm sm:text-base text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-inset transition-colors"
+                className="w-full flex items-center justify-between gap-4 p-5 text-left font-semibold text-sm sm:text-base text-slate-900 dark:text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-inset transition-colors cursor-pointer"
               >
                 <span>{item.question}</span>
                 <ChevronDown
-                  className={`w-4 h-4 flex-shrink-0 text-emerald-400 transition-transform duration-200 ${
+                  className={`w-4 h-4 flex-shrink-0 text-emerald-600 dark:text-emerald-400 transition-transform duration-300 ${
                     isOpen ? "rotate-180" : ""
                   }`}
                 />
               </button>
             </h3>
 
-            <div
-              id={panelId}
-              role="region"
-              aria-labelledby={buttonId}
-              hidden={!isOpen}
-              className={`${
-                isOpen ? "block" : "hidden"
-              } px-5 pb-5 pt-1 border-t border-slate-800/60`}
-            >
-              <p className="text-body-small text-slate-300 leading-relaxed font-normal">
-                {item.answer}
-              </p>
-            </div>
+            <AnimatePresence initial={false}>
+              {isOpen && (
+                <motion.div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={buttonId}
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  className="overflow-hidden border-t border-slate-100 dark:border-slate-800/60"
+                >
+                  <div className="px-5 pb-5 pt-3">
+                    <p className="text-body-small text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                      {item.answer}
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         );
       })}
     </div>
   );
 }
+

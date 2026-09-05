@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { siteConfig } from "@/config/site";
-import { Navbar, Footer } from "@/components/common";
+import { Navbar, Footer, ThemeProvider } from "@/components/common";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -70,13 +70,17 @@ export default function RootLayout({
   return (
     <html
       lang="id"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-[#0B0F17] text-slate-100 selection:bg-emerald-500/30 selection:text-emerald-400">
-        <Navbar />
-        {children}
-        <Footer />
+      <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)] selection:bg-emerald-500/30 selection:text-emerald-400">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
 }
+

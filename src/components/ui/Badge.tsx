@@ -19,11 +19,11 @@ export function Badge({
 
   const variantStyles = {
     emerald:
-      "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
+      "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 dark:border-emerald-500/20",
     slate:
-      "bg-slate-800/80 text-slate-300 border border-slate-700/60",
+      "bg-slate-200/80 dark:bg-slate-800/80 text-slate-800 dark:text-slate-300 border border-slate-300/80 dark:border-slate-700/60",
     outline:
-      "bg-transparent text-slate-300 border border-slate-700",
+      "bg-transparent text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700",
   };
 
   const sizeStyles = {
@@ -40,3 +40,4 @@ export function Badge({
     </div>
   );
 }
+

@@ -9,41 +9,41 @@ const stepsData: Omit<ImplementationStepProps, "isLast">[] = [
     stageName: "DISCOVER",
     title: "Understand Your Organization",
     description:
-      "Memahami struktur organisasi, target learner, kebutuhan training, competency goals, serta workflow pembelajaran yang ingin dibangun.",
+      "Analyze organizational structure, target learners, training requirements, competency goals, and the learning workflows you want to build.",
     tags: ["Organization", "Training Goals", "Learner Structure", "Competency"],
-    icon: <Search className="w-4 h-4 text-emerald-400" />,
+    icon: <Search className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />,
   },
   {
     number: "02",
     stageName: "DESIGN",
     title: "Define the Learning Structure",
     description:
-      "Menerjemahkan kebutuhan menjadi learning paths, modules, assessments, competency structures, roles, dan permission boundaries.",
+      "Translate requirements into learning paths, modules, assessments, competency structures, roles, and permission boundaries.",
     tags: ["Learning Paths", "Curriculum", "Assessments", "Roles"],
-    icon: <Compass className="w-4 h-4 text-emerald-400" />,
+    icon: <Compass className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />,
   },
   {
     number: "03",
     stageName: "CONFIGURE",
     title: "Configure the Platform",
     description:
-      "Mengatur platform berdasarkan struktur yang telah ditentukan, termasuk access control, learner experience, practical activities, dan platform behavior.",
+      "Configure the platform around defined structures, including access control, learner experience, practical activities, and platform behaviors.",
     tags: [
       "Permissions",
       "Learning Experience",
       "Interactive Practice",
       "Platform Configuration",
     ],
-    icon: <SlidersHorizontal className="w-4 h-4 text-emerald-400" />,
+    icon: <SlidersHorizontal className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />,
   },
   {
     number: "04",
     stageName: "DEPLOY",
     title: "Launch Your Learning Environment",
     description:
-      "Menyiapkan environment EduFlex yang telah dikonfigurasi agar dapat digunakan oleh administrator, instructor, dan learner organisasi.",
+      "Prepare and launch your configured EduFlex environment ready for administrators, instructors, and organizational learners.",
     tags: ["Institutional Setup", "Admin Access", "Learner Access", "Deployment"],
-    icon: <Rocket className="w-4 h-4 text-emerald-400" />,
+    icon: <Rocket className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />,
   },
 ];
 
@@ -51,7 +51,7 @@ export function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="py-12 sm:py-16 bg-[#0B0F17] relative border-t border-slate-800/80"
+      className="py-12 sm:py-16 bg-slate-50 dark:bg-[#0B0F17] relative border-t border-slate-200 dark:border-slate-800/80 transition-colors"
       aria-label="How EduFlex Works"
     >
       {/* Background Subtle Gradient Glow Accent */}
@@ -62,7 +62,7 @@ export function HowItWorks() {
         <SectionHeading
           eyebrow="HOW IT WORKS"
           title="From requirements to a working learning platform."
-          description="Setiap alur implementasi EduFlex disusun secara terstruktur dari analisa kebutuhan instansi hingga lingkungan platform siap pakai — memastikan kustomisasi berjalan lancar tanpa keraguan operasional."
+          description="Every EduFlex implementation follows a structured progression from institutional requirement analysis to a ready-to-use platform environment—ensuring smooth customization with zero operational friction."
           align="center"
         />
 
@@ -80,3 +80,4 @@ export function HowItWorks() {
     </section>
   );
 }
+

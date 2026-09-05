@@ -30,7 +30,9 @@ export function SectionHeading({
 
       <h2
         className={`text-h2 font-bold tracking-tight ${
-          light ? "text-slate-900" : "text-slate-100"
+          light
+            ? "text-slate-900"
+            : "text-slate-900 dark:text-slate-100"
         }`}
       >
         {title}
@@ -39,7 +41,9 @@ export function SectionHeading({
       {description && (
         <p
           className={`text-body text-balance ${
-            light ? "text-slate-600" : "text-slate-400"
+            light
+              ? "text-slate-600"
+              : "text-slate-600 dark:text-slate-300"
           }`}
         >
           {description}
@@ -48,3 +52,4 @@ export function SectionHeading({
     </div>
   );
 }
+

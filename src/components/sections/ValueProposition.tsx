@@ -16,32 +16,32 @@ const valuePropsData: ValuePropositionItemProps[] = [
     number: "01",
     title: "Modular Learning Paths",
     description:
-      "Rancang program pelatihan sesuai alur kerja nyata instansi Anda tanpa dipaksa masuk ke struktur kursus konvensional yang kaku.",
-    icon: <Layers className="w-4 h-4 text-emerald-400" />,
+      "Design training programs tailored to your institution's actual workflows without being forced into rigid, monolithic course structures.",
+    icon: <Layers className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />,
     conceptTags: ["Modular Curriculum", "Custom Paths"],
   },
   {
     number: "02",
     title: "Configurable Role Control",
     description:
-      "Atur hak akses, wewenang administratif, dan batasan privasi yang dapat disesuaikan dengan hirarki struktur instansi Anda.",
-    icon: <ShieldCheck className="w-4 h-4 text-emerald-400" />,
+      "Configure granular permissions, administrative authorities, and privacy boundaries customized to your institution's organizational hierarchy.",
+    icon: <ShieldCheck className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />,
     conceptTags: ["3-Tier Hierarchy", "Access Control"],
   },
   {
     number: "03",
     title: "Competency Tracking",
     description:
-      "Pantau pencapaian kompetensi riil, evaluasi unit, dan progres kelulusan peserta — bukan sekadar durasi menonton video.",
-    icon: <BarChart3 className="w-4 h-4 text-emerald-400" />,
+      "Track real competency achievement, unit evaluations, and learner completion progress—not just video watch duration.",
+    icon: <BarChart3 className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />,
     conceptTags: ["Learning Outcomes", "Oversight"],
   },
   {
     number: "04",
     title: "Interactive Practice",
     description:
-      "Bawa edukasi melampaui teori dengan laboratorium simulasi web interaktif, latihan berbasis tugas, dan evaluasi praktik.",
-    icon: <SlidersHorizontal className="w-4 h-4 text-emerald-400" />,
+      "Take education beyond theory with interactive web-based simulation labs, task-based exercises, and practical evaluations.",
+    icon: <SlidersHorizontal className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />,
     conceptTags: ["Virtual Labs", "Practical Practice"],
   },
 ];
@@ -50,7 +50,7 @@ export function ValueProposition() {
   return (
     <section
       id="value-prop"
-      className="py-12 sm:py-16 bg-[#0B0F17] relative border-t border-slate-800/80"
+      className="py-12 sm:py-16 bg-slate-50 dark:bg-[#0B0F17] relative border-t border-slate-200 dark:border-slate-800/80 transition-colors"
       aria-label="Why EduFlex Value Proposition"
     >
       {/* Background Subtle Gradient Glow Accent */}
@@ -61,7 +61,7 @@ export function ValueProposition() {
         <SectionHeading
           eyebrow="WHY EDUFLEX"
           title="An LMS should adapt to your organization — not the other way around."
-          description="Platform LMS konvensional sering kali memaksa instansi mengikuti struktur kursus kaku. EduFlex dirancang sebagai fondasi fleksibel yang mengikuti struktur program, peran, model kompetensi, dan kebutuhan praktik organisasi Anda."
+          description="Conventional LMS platforms often force institutions into rigid course structures. EduFlex is built as a flexible foundation that aligns with your organization's program structure, roles, competency models, and practical training needs."
           align="center"
         />
 
@@ -75,3 +75,4 @@ export function ValueProposition() {
     </section>
   );
 }
+

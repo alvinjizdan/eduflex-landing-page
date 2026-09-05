@@ -207,42 +207,42 @@ export function DemoForm() {
       <div
         role="status"
         aria-live="polite"
-        className="p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-emerald-500/40 text-left space-y-5"
+        className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900/90 border border-emerald-500/40 text-left space-y-5 shadow-card"
       >
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+          <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
             <CheckCircle2 className="w-6 h-6" />
           </div>
           <div>
-            <h4 className="text-h3 text-slate-100 font-bold">
+            <h4 className="text-h3 text-slate-900 dark:text-slate-100 font-bold">
               Demo Request Submitted
             </h4>
-            <p className="text-body-small text-emerald-400 font-medium">
+            <p className="text-body-small text-emerald-600 dark:text-emerald-400 font-medium">
               Your request has been submitted successfully.
             </p>
           </div>
         </div>
 
-        <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 space-y-3 text-xs text-slate-300">
-          <p className="font-semibold text-slate-200">Submitted Demo Profile:</p>
-          <ul className="space-y-1 font-mono text-slate-300">
+        <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 space-y-3 text-xs text-slate-700 dark:text-slate-300">
+          <p className="font-semibold text-slate-900 dark:text-slate-200">Submitted Demo Profile:</p>
+          <ul className="space-y-1 font-mono text-slate-700 dark:text-slate-300">
             <li>
-              <strong className="text-slate-400 font-sans">Name:</strong> {formData.name}
+              <strong className="text-slate-600 dark:text-slate-400 font-sans">Name:</strong> {formData.name}
             </li>
             <li>
-              <strong className="text-slate-400 font-sans">Email:</strong> {formData.email}
+              <strong className="text-slate-600 dark:text-slate-400 font-sans">Email:</strong> {formData.email}
             </li>
             <li>
-              <strong className="text-slate-400 font-sans">Organization:</strong> {formData.organization} ({formData.organizationType})
+              <strong className="text-slate-600 dark:text-slate-400 font-sans">Organization:</strong> {formData.organization} ({formData.organizationType})
             </li>
             <li>
-              <strong className="text-slate-400 font-sans">Requirements:</strong> {formData.requirements}
+              <strong className="text-slate-600 dark:text-slate-400 font-sans">Requirements:</strong> {formData.requirements}
             </li>
           </ul>
         </div>
 
-        <p className="text-xs text-slate-400 leading-relaxed">
-          <span className="font-semibold text-slate-300">Next Steps:</span> The EduFlex team can follow up using the information you provided at <strong className="text-slate-200">{formData.email}</strong>.
+        <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+          <span className="font-semibold text-slate-900 dark:text-slate-300">Next Steps:</span> The EduFlex team can follow up using the information you provided at <strong className="text-slate-900 dark:text-slate-200">{formData.email}</strong>.
         </p>
 
         <button
@@ -259,7 +259,7 @@ export function DemoForm() {
               b_hp: "",
             });
           }}
-          className="text-xs text-emerald-400 hover:underline font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded"
+          className="text-xs text-emerald-600 dark:text-emerald-400 hover:underline font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded cursor-pointer"
         >
           Submit another request
         </button>
@@ -286,7 +286,7 @@ export function DemoForm() {
         <div
           role="alert"
           aria-live="polite"
-          className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 flex items-start gap-3 text-red-400 text-xs leading-relaxed animate-in fade-in-0"
+          className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 flex items-start gap-3 text-red-600 dark:text-red-400 text-xs leading-relaxed animate-in fade-in-0"
         >
           <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
           <div>
@@ -298,8 +298,8 @@ export function DemoForm() {
 
       {/* Full Name */}
       <div className="space-y-1.5">
-        <label htmlFor="demo-name" className="block text-xs font-semibold text-slate-200">
-          Full Name <span className="text-emerald-400">*</span>
+        <label htmlFor="demo-name" className="block text-xs font-semibold text-slate-900 dark:text-slate-200">
+          Full Name <span className="text-emerald-600 dark:text-emerald-400">*</span>
         </label>
         <input
           id="demo-name"
@@ -311,10 +311,10 @@ export function DemoForm() {
           aria-invalid={!!errors.name}
           aria-describedby={errors.name ? "demo-name-error" : undefined}
           placeholder="Enter your full name"
-          className="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 rounded-xl px-4 py-3 text-slate-100 text-sm placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-300 dark:border-slate-800 focus:border-emerald-500 rounded-xl px-4 py-3 text-slate-900 dark:text-slate-100 text-sm placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         />
         {errors.name && (
-          <p id="demo-name-error" className="text-xs font-medium text-red-400">
+          <p id="demo-name-error" className="text-xs font-medium text-red-500 dark:text-red-400">
             {errors.name}
           </p>
         )}
@@ -322,8 +322,8 @@ export function DemoForm() {
 
       {/* Work Email */}
       <div className="space-y-1.5">
-        <label htmlFor="demo-email" className="block text-xs font-semibold text-slate-200">
-          Work Email <span className="text-emerald-400">*</span>
+        <label htmlFor="demo-email" className="block text-xs font-semibold text-slate-900 dark:text-slate-200">
+          Work Email <span className="text-emerald-600 dark:text-emerald-400">*</span>
         </label>
         <input
           id="demo-email"
@@ -335,10 +335,10 @@ export function DemoForm() {
           aria-invalid={!!errors.email}
           aria-describedby={errors.email ? "demo-email-error" : undefined}
           placeholder="you@organization.com"
-          className="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 rounded-xl px-4 py-3 text-slate-100 text-sm placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-300 dark:border-slate-800 focus:border-emerald-500 rounded-xl px-4 py-3 text-slate-900 dark:text-slate-100 text-sm placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         />
         {errors.email && (
-          <p id="demo-email-error" className="text-xs font-medium text-red-400">
+          <p id="demo-email-error" className="text-xs font-medium text-red-500 dark:text-red-400">
             {errors.email}
           </p>
         )}
@@ -348,8 +348,8 @@ export function DemoForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Organization Name */}
         <div className="space-y-1.5">
-          <label htmlFor="demo-org" className="block text-xs font-semibold text-slate-200">
-            Organization Name <span className="text-emerald-400">*</span>
+          <label htmlFor="demo-org" className="block text-xs font-semibold text-slate-900 dark:text-slate-200">
+            Organization Name <span className="text-emerald-600 dark:text-emerald-400">*</span>
           </label>
           <input
             id="demo-org"
@@ -361,10 +361,10 @@ export function DemoForm() {
             aria-invalid={!!errors.organization}
             aria-describedby={errors.organization ? "demo-org-error" : undefined}
             placeholder="Organization name"
-            className="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 rounded-xl px-4 py-3 text-slate-100 text-sm placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-300 dark:border-slate-800 focus:border-emerald-500 rounded-xl px-4 py-3 text-slate-900 dark:text-slate-100 text-sm placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           />
           {errors.organization && (
-            <p id="demo-org-error" className="text-xs font-medium text-red-400">
+            <p id="demo-org-error" className="text-xs font-medium text-red-500 dark:text-red-400">
               {errors.organization}
             </p>
           )}
@@ -372,8 +372,8 @@ export function DemoForm() {
 
         {/* Organization Type */}
         <div className="space-y-1.5">
-          <label htmlFor="demo-org-type" className="block text-xs font-semibold text-slate-200">
-            Organization Type <span className="text-emerald-400">*</span>
+          <label htmlFor="demo-org-type" className="block text-xs font-semibold text-slate-900 dark:text-slate-200">
+            Organization Type <span className="text-emerald-600 dark:text-emerald-400">*</span>
           </label>
           <Combobox
             id="demo-org-type"
@@ -403,7 +403,7 @@ export function DemoForm() {
                     value={item.value}
                     className="flex items-center gap-2"
                   >
-                    <span className="shrink-0 text-emerald-400 [&>svg]:size-4">
+                    <span className="shrink-0 text-emerald-600 dark:text-emerald-400 [&>svg]:size-4">
                       {item.icon}
                     </span>
                     <span>{item.label}</span>
@@ -413,7 +413,7 @@ export function DemoForm() {
             </ComboboxContent>
           </Combobox>
           {errors.organizationType && (
-            <p id="demo-org-type-error" className="text-xs font-medium text-red-400">
+            <p id="demo-org-type-error" className="text-xs font-medium text-red-500 dark:text-red-400">
               {errors.organizationType}
             </p>
           )}
@@ -422,8 +422,8 @@ export function DemoForm() {
 
       {/* Requirements Textarea */}
       <div className="space-y-1.5">
-        <label htmlFor="demo-reqs" className="block text-xs font-semibold text-slate-200">
-          What are you looking to build? <span className="text-emerald-400">*</span>
+        <label htmlFor="demo-reqs" className="block text-xs font-semibold text-slate-900 dark:text-slate-200">
+          What are you looking to build? <span className="text-emerald-600 dark:text-emerald-400">*</span>
         </label>
         <textarea
           id="demo-reqs"
@@ -435,10 +435,10 @@ export function DemoForm() {
           aria-invalid={!!errors.requirements}
           aria-describedby={errors.requirements ? "demo-reqs-error" : undefined}
           placeholder="Tell us briefly about your learning structure, users, practical training needs, or deployment requirements."
-          className="w-full bg-slate-950/80 border border-slate-800 focus:border-emerald-500 rounded-xl px-4 py-3 text-slate-100 text-sm placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-300 dark:border-slate-800 focus:border-emerald-500 rounded-xl px-4 py-3 text-slate-900 dark:text-slate-100 text-sm placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         />
         {errors.requirements && (
-          <p id="demo-reqs-error" className="text-xs font-medium text-red-400">
+          <p id="demo-reqs-error" className="text-xs font-medium text-red-500 dark:text-red-400">
             {errors.requirements}
           </p>
         )}
@@ -466,9 +466,10 @@ export function DemoForm() {
       </Button>
 
       {/* Privacy Note */}
-      <p className="text-[11px] text-slate-400 leading-relaxed pt-1">
+      <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed pt-1">
         By submitting this form, you’re asking the EduFlex team to discuss your organization’s learning requirements. We’ll use the information you provide for that conversation.
       </p>
     </form>
   );
 }
+

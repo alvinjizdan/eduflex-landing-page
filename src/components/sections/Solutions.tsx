@@ -6,7 +6,7 @@ export function Solutions() {
   return (
     <section
       id="solutions"
-      className="py-12 sm:py-16 bg-[#0B0F17] relative border-t border-slate-800/80"
+      className="py-12 sm:py-16 bg-slate-50 dark:bg-[#0B0F17] relative border-t border-slate-200 dark:border-slate-800/80 transition-colors"
       aria-label="Role-Based Platform Solutions"
     >
       {/* Background Subtle Gradient Glow Accent */}
@@ -17,7 +17,7 @@ export function Solutions() {
         <SectionHeading
           eyebrow="ROLE-BASED SOLUTIONS"
           title="Designed for every stakeholder in your learning ecosystem."
-          description="EduFlex secara dinamis menyesuaikan antarmuka, kontrol akses, dan alur kerja berdasarkan tanggung jawab setiap pengguna di organisasi Anda — dari pemilik platform hingga peserta pelatihan."
+          description="EduFlex dynamically adapts interfaces, access controls, and workflows based on each user's responsibility in your organization—from platform owners to learners."
           align="center"
         />
 
@@ -27,3 +27,4 @@ export function Solutions() {
     </section>
   );
 }
+

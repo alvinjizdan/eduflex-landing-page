@@ -23,7 +23,7 @@ const areasData = [
       "Assessments",
       "Competency Model",
     ],
-    icon: <BookOpen className="w-4 h-4 text-emerald-400" />,
+    icon: <BookOpen className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />,
   },
   {
     number: "02",
@@ -36,7 +36,7 @@ const areasData = [
       "Administrative Hierarchy",
       "Learner Access",
     ],
-    icon: <Users className="w-4 h-4 text-emerald-400" />,
+    icon: <Users className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />,
   },
   {
     number: "03",
@@ -49,7 +49,7 @@ const areasData = [
       "Assessments",
       "Progress Tracking",
     ],
-    icon: <SlidersHorizontal className="w-4 h-4 text-emerald-400" />,
+    icon: <SlidersHorizontal className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />,
   },
   {
     number: "04",
@@ -62,7 +62,7 @@ const areasData = [
       "Deployment Model",
       "Integration Ready",
     ],
-    icon: <Server className="w-4 h-4 text-emerald-400" />,
+    icon: <Server className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />,
   },
 ];
 
@@ -91,7 +91,7 @@ export function Customization() {
   return (
     <section
       id="customization"
-      className="py-12 sm:py-16 bg-[#0B0F17] relative border-t border-slate-800/80"
+      className="py-12 sm:py-16 bg-slate-50 dark:bg-[#0B0F17] relative border-t border-slate-200 dark:border-slate-800/80 transition-colors"
       aria-label="Customization and Deployment Model"
     >
       {/* Background Subtle Gradient Glow Accent */}
@@ -124,11 +124,11 @@ export function Customization() {
         {/* High-Level Implementation Model (3 Conceptual Stages) */}
         <div className="pt-8 space-y-6">
           <div className="text-left space-y-2 max-w-xl">
-            <h3 className="text-h3 text-slate-100 font-semibold">
+            <h3 className="text-h3 text-slate-900 dark:text-slate-100 font-semibold">
               Implementation Approach
             </h3>
-            <p className="text-body-small text-slate-400">
-              Proses konsolidasi kebutuhan instansi menjadi lingkungan platform terkonfigurasi.
+            <p className="text-body-small text-slate-600 dark:text-slate-400">
+              The process of consolidating your organization&apos;s requirements into a configured platform environment.
             </p>
           </div>
 
@@ -137,17 +137,17 @@ export function Customization() {
               <Card
                 key={stg.stage}
                 variant="default"
-                className="p-6 space-y-3 border border-slate-800/80 bg-slate-900/40"
+                className="p-6 space-y-3 border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/40"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs font-semibold text-emerald-400 px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">
+                  <span className="font-mono text-xs font-semibold text-emerald-600 dark:text-emerald-400 px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">
                     STAGE {stg.stage}
                   </span>
                 </div>
-                <h4 className="text-h3 text-slate-100 font-semibold">
+                <h4 className="text-h3 text-slate-900 dark:text-slate-100 font-semibold">
                   {stg.title}
                 </h4>
-                <p className="text-body-small text-slate-400">
+                <p className="text-body-small text-slate-600 dark:text-slate-400">
                   {stg.description}
                 </p>
               </Card>
@@ -159,16 +159,16 @@ export function Customization() {
         <div className="pt-6">
           <Card
             variant="glass"
-            className="p-8 sm:p-10 border border-emerald-500/30 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900 text-left flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+            className="p-8 sm:p-10 border border-emerald-500/40 dark:border-emerald-500/30 bg-gradient-to-r from-white via-slate-50 to-white dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-900 text-left flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
           >
             <div className="space-y-2 max-w-2xl">
               <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-emerald-400" />
-                <h3 className="text-h3 text-slate-100 font-bold">
+                <Sparkles className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                <h3 className="text-h3 text-slate-900 dark:text-slate-100 font-bold">
                   Have a specific LMS structure in mind?
                 </h3>
               </div>
-              <p className="text-body-small text-slate-300">
+              <p className="text-body-small text-slate-600 dark:text-slate-300">
                 Tell us how your organization currently manages learning and competency development. We can explore how EduFlex can be structured around those requirements.
               </p>
             </div>
@@ -185,3 +185,4 @@ export function Customization() {
     </section>
   );
 }
+

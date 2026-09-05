@@ -4,7 +4,7 @@ import { Container, Button } from "@/components/ui";
 
 export function Footer() {
   return (
-    <footer className="w-full bg-[#070A0F] border-t border-slate-800/80 text-slate-400 py-12 sm:py-16">
+    <footer className="w-full bg-slate-100 dark:bg-[#070A0F] border-t border-slate-200 dark:border-slate-800/80 text-slate-600 dark:text-slate-400 py-12 sm:py-16 transition-colors">
       <Container className="space-y-12">
         {/* Main Footer Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 items-start text-left">
@@ -18,12 +18,12 @@ export function Footer() {
               <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-slate-950 font-bold text-sm shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
                 E
               </div>
-              <span className="text-lg font-bold tracking-tight text-slate-100">
-                Edu<span className="text-emerald-400">Flex</span>
+              <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">
+                Edu<span className="text-emerald-500 dark:text-emerald-400">Flex</span>
               </span>
             </Link>
 
-            <p className="text-body-small text-slate-400 max-w-sm leading-relaxed font-normal">
+            <p className="text-body-small text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed font-normal">
               Customizable learning infrastructure for organizations that need structured learning, practical training, and measurable competency.
             </p>
           </div>
@@ -32,31 +32,31 @@ export function Footer() {
           <div className="lg:col-span-4 grid grid-cols-2 gap-6">
             {/* Column 1: Platform */}
             <div className="space-y-3">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-200">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200">
                 PLATFORM
               </h3>
               <nav aria-label="Footer platform links" className="flex flex-col space-y-2 text-xs">
                 <a
                   href="#features"
-                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
+                  className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
                 >
                   Features
                 </a>
                 <a
                   href="#solutions"
-                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
+                  className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
                 >
                   Solutions
                 </a>
                 <a
                   href="#customization"
-                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
+                  className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
                 >
                   Customization
                 </a>
                 <a
                   href="#how-it-works"
-                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
+                  className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
                 >
                   Process
                 </a>
@@ -65,19 +65,19 @@ export function Footer() {
 
             {/* Column 2: Resources */}
             <div className="space-y-3">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-200">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-slate-200">
                 RESOURCES
               </h3>
               <nav aria-label="Footer resource links" className="flex flex-col space-y-2 text-xs">
                 <a
                   href="#faq"
-                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
+                  className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
                 >
                   FAQ
                 </a>
                 <a
                   href="#request-demo"
-                  className="hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
+                  className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
                 >
                   Request a Demo
                 </a>
@@ -86,12 +86,12 @@ export function Footer() {
           </div>
 
           {/* Conversion CTA Block (4 cols on lg) */}
-          <div className="lg:col-span-4 p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 space-y-4">
+          <div className="lg:col-span-4 p-6 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 space-y-4 shadow-subtle">
             <div className="space-y-1">
-              <h4 className="text-sm font-semibold text-slate-100">
+              <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                 Ready to build around your organization?
               </h4>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 Discuss your learning requirements with the EduFlex team.
               </p>
             </div>
@@ -105,13 +105,14 @@ export function Footer() {
         </div>
 
         {/* Bottom Utility Bar */}
-        <div className="pt-8 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="pt-8 border-t border-slate-200 dark:border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
           <p>© 2026 EduFlex. All rights reserved.</p>
-          <p className="text-slate-400 text-[11px]">
-            Infrastructure LMS SaaS Terkustomisasi untuk Instansi & Perusahaan.
+          <p className="text-slate-500 dark:text-slate-400 text-[11px]">
+            Customizable SaaS LMS Infrastructure for Organizations & Enterprises.
           </p>
         </div>
       </Container>
     </footer>
   );
 }
+
